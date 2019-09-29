@@ -1,0 +1,232 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Home : MonoBehaviour {
+    public int a1;
+    public int a2;
+    public int a3;
+    public int a4;
+    public int a5;
+    public int a6;
+    public int a7;
+    public int a8;
+    public int a9;
+    public int a10;
+    public int a11;
+    public int a12;
+    public int a13;
+    public int a14;
+    public int a15;
+    public int a16;
+    public int a17;
+    public int a18;
+    public int a19;
+    public int a20;
+    public int a21;
+    public int a22;
+
+    public int aa1;
+    public int aa2;
+    public int aa3;
+    public int aa4;
+    public int aa5;
+    public int aa6;
+    public int aa7;
+    public int aa8;
+    public int aa9;
+    public int aa10;
+    public int aa11;
+    public int aa12;
+    public int aa13;
+    public int aa14;
+    public int aa15;
+    public int aa16;
+    public int aa17;
+    public int aa18;
+    public int aa19;
+    public int aa20;
+    public int aa21;
+    public int aa22;
+
+    public int scorevalue;
+
+    public int newa1;
+    public int newa2;
+    public int newa3;
+    public int newa4;
+    public int newa5;
+    public int newa6;
+    public int newa7;
+    public int newa8;
+    public int newa9;
+    public int newa10;
+    public int newa11;
+    public int newa12;
+    public int newa13;
+    public int newa14;
+    public int newa15;
+    public int newa16;
+    public int newa17;
+    public int newa18;
+    public int newa19;
+    public int newa20;
+    public int newa21;
+    public int newa22;
+    public int newa23;
+    public int newa24;
+    public int newscorevalue;
+
+    public GameObject b1;
+    public GameObject b2;
+    public GameObject b3;
+    public GameObject b4;
+    public GameObject b5;
+    public GameObject b6;
+    public GameObject b7;
+    public GameObject b8;
+    public GameObject b9;
+    public GameObject b10;
+    public GameObject b11;
+    public GameObject b12;
+    public GameObject b13;
+    public GameObject b14;
+    public GameObject b15;
+    public GameObject b16;
+    public GameObject b17;
+    public GameObject b18;
+    public GameObject b19;
+    public GameObject b20;
+    public GameObject b21;
+    public GameObject b22;
+
+    public GameObject c1;
+    public GameObject c2;
+    public GameObject c3;
+    public GameObject c4;
+    public GameObject c5;
+    public GameObject c6;
+    public GameObject c7;
+    public GameObject c8;
+    public GameObject c9;
+    public GameObject c10;
+    public GameObject c11;
+    public GameObject c12;
+    public GameObject c13;
+    public GameObject c14;
+    public GameObject c15;
+    public GameObject c16;
+    public GameObject c17;
+    public GameObject c18;
+    public GameObject c19;
+    public GameObject c20;
+    public GameObject c21;
+    public GameObject c22;
+    public GameObject score;
+
+    // Use this for initialization
+    void Start () {
+        //PlayerPrefs.DeleteAll();
+        a1 = PlayerPrefs.GetInt("aa1");
+        a2 = PlayerPrefs.GetInt("a2");
+        a3 = PlayerPrefs.GetInt("a3");
+        a4 = PlayerPrefs.GetInt("a4");
+        a5 = PlayerPrefs.GetInt("a5");
+        a6 = PlayerPrefs.GetInt("a6");
+        a7 = PlayerPrefs.GetInt("a7");
+        a8 = PlayerPrefs.GetInt("a8");
+        a9 = PlayerPrefs.GetInt("a9");
+        a10 = PlayerPrefs.GetInt("a10" );
+        a11 = PlayerPrefs.GetInt("a11" );
+        a12 = PlayerPrefs.GetInt("a12" );
+        a13 = PlayerPrefs.GetInt("a13");
+        a14 = PlayerPrefs.GetInt("a14");
+        a15 = PlayerPrefs.GetInt("a15");
+        a16 = PlayerPrefs.GetInt("a16");
+        a17 = PlayerPrefs.GetInt("a17");
+        a18 = PlayerPrefs.GetInt("a18");
+        a19 = PlayerPrefs.GetInt("a19");
+        a20 = PlayerPrefs.GetInt("a20");
+        a21 = PlayerPrefs.GetInt("a21");
+        a22 = PlayerPrefs.GetInt("a22");
+
+
+        aa1 =1-a1;
+        aa2 =7-a2;
+        aa3 =1- a3;
+        aa4 =1-a4;
+        aa5 =7-a5;
+        aa6 =1-a6;
+        aa7 =4-a7;
+        aa8 = 7 - a8;
+        aa9 = 50 - a9;
+        aa10 = 541 - a10;
+        aa11= 1396 - a11;
+        aa12 = 3408 - a12;
+        aa13 = 5902 - a13;
+        aa14 = 6951 - a14;
+        aa15 = 4103 - a15;
+        aa16 = 2339 - a16;
+        aa17 = 3- a17;
+        aa18 = 125 - a18;
+        aa19 = 113 - a19;
+        aa20 =68 - a20;
+        aa21 = 497 - a21;
+        aa22 = 86 - a22;
+        scorevalue = PlayerPrefs.GetInt("scorevalue");
+
+        b1.gameObject.GetComponent<Text>().text = ""+a1;
+        b2.gameObject.GetComponent<Text>().text = "" + a2;
+        b3.gameObject.GetComponent<Text>().text = "" + a3;
+        b4.gameObject.GetComponent<Text>().text = "" + a4;
+        b5.gameObject.GetComponent<Text>().text = "" + a5;
+        b6.gameObject.GetComponent<Text>().text = "" + a6;
+        b7.gameObject.GetComponent<Text>().text = "" + a7;
+        b8.gameObject.GetComponent<Text>().text = "" + a8;
+        b9.gameObject.GetComponent<Text>().text = "" + a9;
+        b10.gameObject.GetComponent<Text>().text = "" + a10;
+        b11.gameObject.GetComponent<Text>().text = "" + a11;
+        b12.gameObject.GetComponent<Text>().text = "" + a12;
+        b13.gameObject.GetComponent<Text>().text = "" + a13;
+        b14.gameObject.GetComponent<Text>().text = "" + a14;
+        b15.gameObject.GetComponent<Text>().text = "" + a15;
+        b16.gameObject.GetComponent<Text>().text = "" + a16;
+        b17.gameObject.GetComponent<Text>().text = "" + a17;
+        b18.gameObject.GetComponent<Text>().text = "" + a18;
+        b19.gameObject.GetComponent<Text>().text = "" + a19;
+        b20.gameObject.GetComponent<Text>().text = "" + a20;
+        b21.gameObject.GetComponent<Text>().text = "" + a21;
+        b22.gameObject.GetComponent<Text>().text = "" + a22;
+
+        c1.gameObject.GetComponent<Text>().text = "" + aa1;
+        c2.gameObject.GetComponent<Text>().text = "" + aa2;
+        c3.gameObject.GetComponent<Text>().text = "" + aa3;
+        c4.gameObject.GetComponent<Text>().text = "" + aa4;
+        c5.gameObject.GetComponent<Text>().text = "" + aa5;
+        c6.gameObject.GetComponent<Text>().text = "" + aa6;
+        c7.gameObject.GetComponent<Text>().text = "" + aa7;
+        c8.gameObject.GetComponent<Text>().text = "" + aa8;
+        c9.gameObject.GetComponent<Text>().text = "" + aa9;
+        c10.gameObject.GetComponent<Text>().text = "" + aa10;
+        c11.gameObject.GetComponent<Text>().text = "" + aa11;
+        c12.gameObject.GetComponent<Text>().text = "" + aa12;
+        c13.gameObject.GetComponent<Text>().text = "" + aa13;
+        c14.gameObject.GetComponent<Text>().text = "" + aa14;
+        c15.gameObject.GetComponent<Text>().text = "" + aa15;
+        c16.gameObject.GetComponent<Text>().text = "" + aa16;
+        c17.gameObject.GetComponent<Text>().text = "" + aa17;
+        c18.gameObject.GetComponent<Text>().text = "" + aa18;
+        c19.gameObject.GetComponent<Text>().text = "" + aa19;
+        c20.gameObject.GetComponent<Text>().text = "" + aa20;
+        c21.gameObject.GetComponent<Text>().text = "" + aa21;
+        c22.gameObject.GetComponent<Text>().text = "" + aa22;
+
+        score.gameObject.GetComponent<Text>().text = "" + scorevalue;
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+}
