@@ -3,6 +3,7 @@ using MysqlAccess;
 
 public class MysqlManage : MonoBehaviour {
     public string connectString;
+    public GameObject noConnectWindow;
 
     // Use this for initialization
     void Start () {
@@ -13,4 +14,12 @@ public class MysqlManage : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void checkConnect()
+    {
+        if (!Access.isConnect())
+            noConnectWindow.SetActive(true);
+    }
+
+
 }

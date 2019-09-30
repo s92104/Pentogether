@@ -19,6 +19,9 @@ public class Account : MonoBehaviour {
 
     public void checkLogin()
     {
+        if (!Access.isConnect())
+            return;
+
         if (PlayerPrefs.HasKey("username"))
         {
             string username = PlayerPrefs.GetString("username");
