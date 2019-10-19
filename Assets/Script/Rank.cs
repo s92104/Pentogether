@@ -16,7 +16,7 @@ public class Rank : MonoBehaviour {
 	void Update () {
 		
 	}
-
+    
     public void rank()
     {
         if (!Access.isConnect())

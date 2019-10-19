@@ -5,17 +5,32 @@ using MysqlAccess;
 using UnityEngine.SceneManagement;
 
 public class Account : MonoBehaviour {
-    public GameObject loginWindow, accountWindow,registerWindow;
+    public string connectString;
+    public GameObject loginWindow, accountWindow,registerWindow,noConnectWindow;
 
 	// Use this for initialization
 	void Start () {
-        
+        //連線
+        Access.setConnectString(connectString);
+        checkConnect();
+        //同步資料
+        if (PlayerPrefs.HasKey("username"))
+        {
+            upload();
+            download();
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public void checkConnect()
+    {
+        if (!Access.isConnect())
+            noConnectWindow.SetActive(true);
+    }
 
     public void checkLogin()
     {
@@ -56,7 +71,9 @@ public class Account : MonoBehaviour {
         if (Access.checkUser(username, password))
         {
             PlayerPrefs.SetString("username", username);
-            loginWindow.SetActive(false);
+            upload();
+            download();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else
             Debug.Log("No");
@@ -64,8 +81,12 @@ public class Account : MonoBehaviour {
 
     public void logout()
     {
+        upload();
+
+        //刪除資料
+        delete();
         PlayerPrefs.DeleteKey("username");
-        accountWindow.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void upload()
@@ -128,7 +149,6 @@ public class Account : MonoBehaviour {
             Access.updateSolutionCount(username, solutionCount[0][i], solutionCount[1][i]);
     }
 
-
     public void download()
     {
     	string username=PlayerPrefs.GetString("username");
@@ -166,9 +186,6 @@ public class Account : MonoBehaviour {
         }
         //下載Score
         PlayerPrefs.SetInt("scorevalue", score);
-        //更新畫面
-        accountWindow.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     List<string>[] getSolution()
@@ -192,5 +209,30 @@ public class Account : MonoBehaviour {
 
         List<string>[] result= {stage,solution};
         return result;
+    }
+
+    public void delete()
+    {
+        for (int i = 1; i < 23; i++)
+        {
+            //Solution Count
+            string recordName = "a";
+            if (i ==1)
+                recordName += "a";
+            recordName += i;
+            if (PlayerPrefs.HasKey(recordName))
+                PlayerPrefs.DeleteKey(recordName);
+
+            //Solution
+            recordName = "Solution";
+            if (i < 10)
+                recordName += "0";
+            recordName += i;
+
+            for (int j = 0; PlayerPrefs.HasKey(recordName + j); j++)
+                PlayerPrefs.DeleteKey(recordName + j);
+        }
+        //Score
+        PlayerPrefs.DeleteKey("scorevalue");
     }
 }
