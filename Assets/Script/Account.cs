@@ -6,19 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class Account : MonoBehaviour {
     public string connectString;
-    public GameObject loginWindow, accountWindow,registerWindow,noConnectWindow;
+    public GameObject loginWindow, accountWindow,registerWindow,noConnectWindow,loginFailWindow,registerFailWindow;
 
 	// Use this for initialization
 	void Start () {
         //連線
         Access.setConnectString(connectString);
         checkConnect();
-        //同步資料
+        //上傳資料
         if (PlayerPrefs.HasKey("username"))
-        {
             upload();
-            download();
-        }
 	}
 	
 	// Update is called once per frame
@@ -60,7 +57,7 @@ public class Account : MonoBehaviour {
             loginWindow.SetActive(true);
         }
         else
-            Debug.Log("No");
+            registerFailWindow.SetActive(true);
     }
 
     public void login()
@@ -71,18 +68,17 @@ public class Account : MonoBehaviour {
         if (Access.checkUser(username, password))
         {
             PlayerPrefs.SetString("username", username);
+            //同步資料
             upload();
             download();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else
-            Debug.Log("No");
+            loginFailWindow.SetActive(true);
     }
 
     public void logout()
     {
-        upload();
-
         //刪除資料
         delete();
         PlayerPrefs.DeleteKey("username");
